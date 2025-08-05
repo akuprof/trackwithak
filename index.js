@@ -68,7 +68,7 @@ app.get("/c/:path/:uri", (req, res) => {
 bot.on('message', async (msg) => {
     const chatId = msg.chat.id;
 
-    if (msg?.reply_to_message?.text == "https://trackwithak-623836997544.europe-west1.run.app") {
+    if (msg?.reply_to_message?.text == "https://console.cloud.google.com/cloud-build/builds;region=global/251d0580-fbcf-4369-8cdc-ac7ae37b77f9?inv=1&invt=Ab4o9w&project=plasma-kit-462907-t7") {
         createLink(chatId, msg.text);
     }
 
