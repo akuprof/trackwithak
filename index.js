@@ -68,7 +68,7 @@ app.get("/c/:path/:uri", (req, res) => {
 bot.on('message', async (msg) => {
     const chatId = msg.chat.id;
 
-    if (msg?.reply_to_message?.text == "🌐 Enter Your URL") {
+    if (msg?.reply_to_message?.text == "https://trackwithak-623836997544.europe-west1.run.app") {
         createLink(chatId, msg.text);
     }
 
