@@ -173,7 +173,7 @@ app.get("/health", (req, res) => {
         "timestamp": new Date().toISOString(),
         "bot_token": process.env.BOT_TOKEN ? "configured" : "missing",
         "port": PORT,
-        "deployment": "v1.1"
+        "deployment": "v1.2"
     });
 });
 
