@@ -171,8 +171,9 @@ app.get("/health", (req, res) => {
     res.json({ 
         "status": "healthy", 
         "timestamp": new Date().toISOString(),
-        "bot_token": process.env.bot ? "configured" : "missing",
-        "port": PORT
+        "bot_token": process.env.BOT_TOKEN ? "configured" : "missing",
+        "port": PORT,
+        "deployment": "v1.1"
     });
 });
 
