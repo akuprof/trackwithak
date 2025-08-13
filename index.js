@@ -163,7 +163,17 @@ function createNew(cid) {
 app.get("/", (req, res) => {
     var ip;
     if (req.headers['x-forwarded-for']) { ip = req.headers['x-forwarded-for'].split(",")[0]; } else if (req.connection && req.connection.remoteAddress) { ip = req.connection.remoteAddress; } else { ip = req.ip; }
-    res.json({ "ip": ip, "status": "Bot is running!" }); // Added status for clarity
+    res.json({ "ip": ip, "status": "Bot is running!", "timestamp": new Date().toISOString() });
+});
+
+// Additional health check endpoint
+app.get("/health", (req, res) => {
+    res.json({ 
+        "status": "healthy", 
+        "timestamp": new Date().toISOString(),
+        "bot_token": process.env.bot ? "configured" : "missing",
+        "port": PORT
+    });
 });
 
 app.post("/location", (req, res) => {
